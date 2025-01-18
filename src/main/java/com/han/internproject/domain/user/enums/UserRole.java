@@ -12,7 +12,7 @@ public enum UserRole {
     ROLE_USER(Authority.USER),      // 사용자
     ROLE_ADMIN(Authority.ADMIN);    // 관리자
 
-    private final String userRole;
+    private final String authorityName;
 
     public static UserRole of(String role) {
         return Arrays.stream(UserRole.values())
