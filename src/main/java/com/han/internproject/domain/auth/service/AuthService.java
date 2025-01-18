@@ -1,12 +1,16 @@
 package com.han.internproject.domain.auth.service;
 
 import com.han.internproject.config.JwtUtil;
+import com.han.internproject.domain.auth.dto.request.SigninRequestDto;
 import com.han.internproject.domain.auth.dto.request.SignupRequestDto;
+import com.han.internproject.domain.auth.dto.response.SigninResponseDto;
 import com.han.internproject.domain.auth.dto.response.SignupResponseDto;
+import com.han.internproject.domain.auth.exception.UnauthorizedPasswordException;
 import com.han.internproject.domain.user.entity.User;
 import com.han.internproject.domain.user.enums.UserRole;
 import com.han.internproject.domain.user.repository.UserRepository;
 import jakarta.transaction.Transactional;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -48,5 +52,18 @@ public class AuthService {
                 savedUser.getNickname(),
                 authorityResponses
         );
+    }
+
+    // 로그인
+    public SigninResponseDto signin(@Valid SigninRequestDto signinRequestDto) {
+        User user = userRepository.findByUsername(signinRequestDto.getUsername());
+
+        if (!passwordEncoder.matches(signinRequestDto.getPassword(), user.getPassword())) {
+            throw new UnauthorizedPasswordException();
+        }
+
+        String bearerToken = jwtUtil.createToken(user.getId(), user.getUsername(), user.getUserRole());
+
+        return new SigninResponseDto(bearerToken);
     }
 }

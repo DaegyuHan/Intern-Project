@@ -1,6 +1,8 @@
 package com.han.internproject.domain.auth.controller;
 
+import com.han.internproject.domain.auth.dto.request.SigninRequestDto;
 import com.han.internproject.domain.auth.dto.request.SignupRequestDto;
+import com.han.internproject.domain.auth.dto.response.SigninResponseDto;
 import com.han.internproject.domain.auth.dto.response.SignupResponseDto;
 import com.han.internproject.domain.auth.service.AuthService;
 import jakarta.validation.Valid;
@@ -23,8 +25,8 @@ public class AuthController {
     }
 
     // 로그인
-//    @PostMapping("/auth/signup")
-//    public ResponseEntity<SigninResponseDto> signin(@Valid @RequestBody SigninRequestDto signinRequestDto) {
-//        return ResponseEntity.ok(authService.signin(signinRequestDto));
-//    }
+    @PostMapping("/auth/signin")
+    public ResponseEntity<SigninResponseDto> signin(@Valid @RequestBody SigninRequestDto signinRequestDto) {
+        return ResponseEntity.ok(authService.signin(signinRequestDto));
+    }
 }
