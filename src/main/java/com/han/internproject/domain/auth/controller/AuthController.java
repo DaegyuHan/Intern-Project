@@ -19,13 +19,13 @@ public class AuthController {
     private final AuthService authService;
 
     // 회원가입
-    @PostMapping("/auth/signup")
+    @PostMapping("/signup")
     public ResponseEntity<SignupResponseDto> signup(@Valid @RequestBody SignupRequestDto signupRequestDto) {
         return ResponseEntity.ok(authService.signup(signupRequestDto));
     }
 
     // 로그인
-    @PostMapping("/auth/signin")
+    @PostMapping("/sign")
     public ResponseEntity<SigninResponseDto> signin(@Valid @RequestBody SigninRequestDto signinRequestDto) {
         return ResponseEntity.ok(authService.signin(signinRequestDto));
     }
