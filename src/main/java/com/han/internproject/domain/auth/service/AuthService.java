@@ -5,6 +5,7 @@ import com.han.internproject.domain.auth.dto.request.SigninRequestDto;
 import com.han.internproject.domain.auth.dto.request.SignupRequestDto;
 import com.han.internproject.domain.auth.dto.response.SigninResponseDto;
 import com.han.internproject.domain.auth.dto.response.SignupResponseDto;
+import com.han.internproject.domain.auth.exception.DuplicateUsernameException;
 import com.han.internproject.domain.auth.exception.UnauthorizedPasswordException;
 import com.han.internproject.domain.user.entity.User;
 import com.han.internproject.domain.user.enums.UserRole;
@@ -28,6 +29,10 @@ public class AuthService {
 
     // 회원가입
     public SignupResponseDto signup(SignupRequestDto signupRequestDto) {
+
+        if (userRepository.existsByUsername(signupRequestDto.getUsername())) {
+            throw new DuplicateUsernameException();
+        }
 
         // Password Encoding
         String encodedPassword = passwordEncoder.encode(signupRequestDto.getPassword());
