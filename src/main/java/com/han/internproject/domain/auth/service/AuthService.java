@@ -28,7 +28,6 @@ public class AuthService {
     private final PasswordEncoder passwordEncoder;
     private final JwtUtil jwtUtil;
     private final UserRepository userRepository;
-    private final RedisUserService redisUserService;
 
     // 회원가입
     public SignupResponseDto signup(SignupRequestDto signupRequestDto) {

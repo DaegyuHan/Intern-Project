@@ -23,14 +23,6 @@ repositories {
     mavenCentral()
 }
 
-sourceSets {
-    test {
-        java {
-            srcDirs = ['src/test/java']
-        }
-    }
-}
-
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-security'
     runtimeOnly 'com.mysql:mysql-connector-j'
@@ -52,9 +44,10 @@ dependencies {
 
     // redis
     implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+
+    // Swagger UI
+    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.7.0'
 }
 
 tasks.named('test') {
-    useJUnitPlatform()
-    jvmArgs '-Xshare:off' // JVM 아규먼트 설정
 }
