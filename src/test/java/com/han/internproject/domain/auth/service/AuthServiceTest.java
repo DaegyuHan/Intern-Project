@@ -86,7 +86,7 @@ class AuthServiceTest {
         given(passwordEncoder.matches(signinRequestDto.getPassword(), savedUser.getPassword())).willReturn(true);
 
 
-        given(jwtUtil.createToken(savedUser.getId(), savedUser.getUsername(), savedUser.getUserRole())).willReturn(mockToken);
+        given(jwtUtil.createAccessToken(savedUser.getId(), savedUser.getUsername(), savedUser.getUserRole())).willReturn(mockToken);
 
         // when
         SigninResponseDto signinResponseDto = authService.signin(signinRequestDto);

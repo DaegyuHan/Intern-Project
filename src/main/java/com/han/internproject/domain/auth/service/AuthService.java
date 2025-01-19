@@ -11,6 +11,7 @@ import com.han.internproject.domain.user.entity.User;
 import com.han.internproject.domain.user.enums.UserRole;
 import com.han.internproject.domain.user.exception.NotFoundUserException;
 import com.han.internproject.domain.user.repository.UserRepository;
+import com.han.internproject.domain.user.service.RedisUserService;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -27,6 +28,7 @@ public class AuthService {
     private final PasswordEncoder passwordEncoder;
     private final JwtUtil jwtUtil;
     private final UserRepository userRepository;
+    private final RedisUserService redisUserService;
 
     // 회원가입
     public SignupResponseDto signup(SignupRequestDto signupRequestDto) {
@@ -71,7 +73,9 @@ public class AuthService {
         }
 
         // Access Token 발급
-        String bearerToken = jwtUtil.createToken(user.getId(), user.getUsername(), user.getUserRole());
+        String bearerToken = jwtUtil.createAccessToken(user.getId(), user.getUsername(), user.getUserRole());
+        // Refresh Token 발급
+        jwtUtil.createRefreshToken(user.getId(), user.getUsername(), user.getUserRole());
 
         return new SigninResponseDto(bearerToken);
     }
