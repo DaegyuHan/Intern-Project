@@ -61,7 +61,7 @@ JWT 는 클라이언트와 서버 간 인증 및 정보를 안전하게 전달�
   
   <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FToNrw%2FbtsLS935fmm%2FZgstJZIs2KXj8h8E9Ov8lk%2Fimg.png" style="width:500px; padding-left:10px;">
 
-- [x] Swagger UI 설정 및 API 검증
+- [x] Swagger UI 설정 및 API 접근과 검증
 
   <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fbb4Wxl%2FbtsLTHeW5mx%2Fp8uwzRLYDFEoTNiTKiN13K%2Fimg.png" style="width:500px; padding-left:10px;">
   <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcGcr1h%2FbtsLTHlJreb%2FIcKfLZ8vk0dSgokYp1lWxK%2Fimg.png" style="width:500px; padding-left:10px;">
@@ -84,3 +84,17 @@ JWT 는 클라이언트와 서버 간 인증 및 정보를 안전하게 전달�
   
       <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcxUWTK%2FbtsLSSIjruU%2FbqgCBTNyqqDlTnvmKv6Hjk%2Fimg.png" style="width:500px; padding-left:10px;">
       <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbMNQHo%2FbtsLSRWWU27%2FKmcnPs6XHK4XtXqWTCQzt1%2Fimg.png" style="width:500px; padding-left:10px;">
+
+- [x] AWS EC2 에 배포
+
+- 인스턴스 생성 및 실행
+
+    <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcGi0kO%2FbtsLTtBbD54%2Fq48jWli7hgSCDPKh0aSqP1%2Fimg.png" style="width:500px; padding-left:10px;">
+
+- Docker hub Image 등록
+
+    <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcMzD5g%2FbtsLTpZXYfe%2FS73DSK0iKIczLzxJQjBEh1%2Fimg.png" style="width:500px; padding-left:10px;">
+          
+- SSH EC2 접근 및 컨테이너 실행
+
+    <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbXJz2E%2FbtsLSPrjIvY%2FpcH4DuTlTxYDKDZYAGUWK0%2Fimg.png" style="width:500px; padding-left:10px;">
