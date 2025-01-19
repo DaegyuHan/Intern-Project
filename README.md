@@ -1,9 +1,9 @@
 # Backend Onboarding Project ( java )
 
-## 🔧 주제
+## 💡 주제
 회원가입 및 로그인 서비스 구현 과제
 
-## 🔧 요구사항
+## 💡 요구사항
 
 - [x] Spring Security를 이용한 Filter에 대한 이해
 - [x] JWT와 구체적인 알고리즘의 이해
@@ -12,7 +12,7 @@
 - [x] EC2에 배포해보기
 
 
-## 🔧 시나리오 설계
+## 💡 시나리오 설계
 <details>
 <summary> Spring Security 기본 이해</summary>
 
@@ -51,11 +51,11 @@ JWT 는 클라이언트와 서버 간 인증 및 정보를 안전하게 전달�
 [JUnit5 를 활용한 단위 테스트 코드 작성하기](https://hanstory33.tistory.com/201)
 </details>
 
-## 🔧 API 명세
+## 💡 API 명세
   <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbGaIX4%2FbtsLSzI4gJq%2F3xVpftQL3lztNWUS4oKcfK%2Fimg.png" style="width:600px; padding-left:10px;">
 
 
-## 🔧 작업 진행
+## 💡 작업 진행
 - [x] 회원가입 기능 구현 및 테스트
 
   <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbSsq60%2FbtsLTGNTSVn%2FKKB4KAnyAE4i0VfqBQjJg0%2Fimg.png" style="width:500px; padding-left:10px;">
