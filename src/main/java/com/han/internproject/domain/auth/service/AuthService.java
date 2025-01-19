@@ -11,7 +11,6 @@ import com.han.internproject.domain.user.entity.User;
 import com.han.internproject.domain.user.enums.UserRole;
 import com.han.internproject.domain.user.exception.NotFoundUserException;
 import com.han.internproject.domain.user.repository.UserRepository;
-import com.han.internproject.domain.user.service.RedisUserService;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
