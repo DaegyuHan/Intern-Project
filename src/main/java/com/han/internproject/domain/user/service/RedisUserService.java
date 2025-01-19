@@ -23,10 +23,4 @@ public class RedisUserService {
         String key = "refresh_Token : " + userId;
         return redisTemplate.opsForValue().get(key);
     }
-
-    // Refresh Token 삭제
-    public void deleteRefreshToken(String userId) {
-        String key = "refresh_Token : " + userId;
-        redisTemplate.delete(key);
-    }
 }

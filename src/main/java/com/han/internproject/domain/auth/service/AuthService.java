@@ -30,10 +30,8 @@ public class AuthService {
 
     // 회원가입
     public SignupResponseDto signup(SignupRequestDto signupRequestDto) {
-
-        if (userRepository.existsByUsername(signupRequestDto.getUsername())) {
-            throw new DuplicateUsernameException();
-        }
+        // 사용자 이름 중복 확인
+        checkIfUsernameExists(signupRequestDto.getUsername());
 
         // Password Encoding
         String encodedPassword = passwordEncoder.encode(signupRequestDto.getPassword());
@@ -62,19 +60,35 @@ public class AuthService {
 
     // 로그인
     public SigninResponseDto signin(@Valid SigninRequestDto signinRequestDto) {
-        // 사용자 이름 확인
-        User user = userRepository.findByUsername(signinRequestDto.getUsername()).orElseThrow(NotFoundUserException::new);
+        // 사용자 확인
+        User user = findUserByUsername(signinRequestDto.getUsername());
 
-        // 비밀번호 확인
-        if (!passwordEncoder.matches(signinRequestDto.getPassword(), user.getPassword())) {
-            throw new UnauthorizedPasswordException();
-        }
+        // 비밀번호 검증
+        validatePassword(signinRequestDto.getPassword(), user.getPassword());
 
-        // Access Token 발급
+        // 토큰 발급
         String bearerToken = jwtUtil.createAccessToken(user.getId(), user.getUsername(), user.getUserRole());
-        // Refresh Token 발급
         jwtUtil.createRefreshToken(user.getId(), user.getUsername(), user.getUserRole());
 
         return new SigninResponseDto(bearerToken);
+    }
+
+    // 사용자 이름 존재 여부 확인
+    private void checkIfUsernameExists(String username) {
+        if (userRepository.existsByUsername(username)) {
+            throw new DuplicateUsernameException();
+        }
+    }
+
+    // 사용자 조회
+    private User findUserByUsername(String username) {
+        return userRepository.findByUsername(username).orElseThrow(NotFoundUserException::new);
+    }
+
+    // 비밀번호 검증
+    private void validatePassword(String rawPassword, String encodedPassword) {
+        if (!passwordEncoder.matches(rawPassword, encodedPassword)) {
+            throw new UnauthorizedPasswordException();
+        }
     }
 }
