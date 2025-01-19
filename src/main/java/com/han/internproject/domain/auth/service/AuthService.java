@@ -9,6 +9,7 @@ import com.han.internproject.domain.auth.exception.DuplicateUsernameException;
 import com.han.internproject.domain.auth.exception.UnauthorizedPasswordException;
 import com.han.internproject.domain.user.entity.User;
 import com.han.internproject.domain.user.enums.UserRole;
+import com.han.internproject.domain.user.exception.NotFoundUserException;
 import com.han.internproject.domain.user.repository.UserRepository;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
@@ -61,12 +62,15 @@ public class AuthService {
 
     // 로그인
     public SigninResponseDto signin(@Valid SigninRequestDto signinRequestDto) {
-        User user = userRepository.findByUsername(signinRequestDto.getUsername());
+        // 사용자 이름 확인
+        User user = userRepository.findByUsername(signinRequestDto.getUsername()).orElseThrow(NotFoundUserException::new);
 
+        // 비밀번호 확인
         if (!passwordEncoder.matches(signinRequestDto.getPassword(), user.getPassword())) {
             throw new UnauthorizedPasswordException();
         }
 
+        // Access Token 발급
         String bearerToken = jwtUtil.createToken(user.getId(), user.getUsername(), user.getUserRole());
 
         return new SigninResponseDto(bearerToken);
