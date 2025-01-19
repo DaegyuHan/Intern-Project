@@ -69,3 +69,18 @@ JWT 는 클라이언트와 서버 간 인증 및 정보를 안전하게 전달�
 - [x] PR 작성 및 제출
 
   <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbMafHo%2FbtsLRmKzBMd%2FPCHXKelgxXp7QKUkOpuRKk%2Fimg.png" style="width:300px; padding-left:10px;">
+
+- [x] AI-assisted programming
+
+  <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FdOd8qO%2FbtsLSAgQJ7o%2FJfC9Xi6B8pb4D8xMpU5ku0%2Fimg.png" style="width:400px; padding-left:10px;">
+
+- [x] Refactoring
+
+    - 개선 전
+  
+      <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FPGIMP%2FbtsLSnIKJjW%2FLQNPoqmcnxYMZCoIy9khv1%2Fimg.png" style="width:500px; padding-left:10px;">
+
+    - 개선 후
+  
+      <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcxUWTK%2FbtsLSSIjruU%2FbqgCBTNyqqDlTnvmKv6Hjk%2Fimg.png" style="width:500px; padding-left:10px;">
+      <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbMNQHo%2FbtsLSRWWU27%2FKmcnPs6XHK4XtXqWTCQzt1%2Fimg.png" style="width:500px; padding-left:10px;">
